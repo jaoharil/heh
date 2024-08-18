@@ -74,6 +74,7 @@
                         <thead>
                             <tr>
                                 <th>Nama</th>
+                                <th>Deskripsi</th>
                                 <th>Foto</th>
                                 <th style="width: 10%">Action</th>
                             </tr>
@@ -81,6 +82,7 @@
                         <tfoot>
                             <tr>
                                 <th>Nama</th>
+                                <th>Deskripsi</th>
                                 <th>Foto</th>
                                 <th>Action</th>
                             </tr>
@@ -98,6 +100,7 @@
                             while ($data = mysqli_fetch_assoc($query)) { ?>
                                 <tr>
                                     <td><?php echo $data['nama']; ?></td>
+                                    <td><?php echo $data['deskripsi']; ?></td>
                                     <td><img class="foto-thumbnail" src='foto/<?php echo $data['foto']; ?>' alt="Foto buku" width="110"></td>
                                     <td>
                                         <div class="form-button-action">

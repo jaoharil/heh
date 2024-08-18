@@ -40,6 +40,15 @@
                                 />
                             </div>
                             <div class="form-group">
+                                <label for="nama">Deskripsi</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="deskripsi"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
                                 <label for="foto">Foto</label>
                                 <input
                                     type="file"

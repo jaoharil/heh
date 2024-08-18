@@ -5,6 +5,7 @@ require_once "config/koneksi.php";
 // inisialisasi variabel
 $id = '';
 $nama = '';
+$deskripsi = '';
 $foto = '';
 
 // jika parameter id ada di URL
@@ -19,6 +20,7 @@ if (isset($_GET['id'])) {
     // pastikan data ada
     if ($data) {
         $nama = $data['nama'];
+        $deskripsi = $data['deskripsi'];
         $foto = $data['foto'];
     } else {
         // handle case jika data tidak ditemukan
@@ -72,6 +74,16 @@ if (isset($_GET['id'])) {
                                     class="form-control"
                                     name="nama"
                                     value="<?php echo htmlspecialchars($nama); ?>"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="deskripsi">Deskripsi</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="deskripsi"
+                                    value="<?php echo htmlspecialchars($deskripsi); ?>"
                                     required
                                 />
                             </div>

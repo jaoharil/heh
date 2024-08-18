@@ -6,6 +6,7 @@ require_once "config/koneksi.php";
 if (isset($_POST['simpan'])) {
     $id = mysqli_real_escape_string($db, trim($_POST['id']));
     $nama = mysqli_real_escape_string($db, trim($_POST['nama']));
+    $deskripsi = mysqli_real_escape_string($db, trim($_POST['deskripsi']));
     $tmp_file = $_FILES['foto']['tmp_name'];
     $nama_file = $_FILES['foto']['name'];
     $path = "foto/" . $nama_file;
@@ -14,7 +15,7 @@ if (isset($_POST['simpan'])) {
     if ($nama_file) {
         if (move_uploaded_file($tmp_file, $path)) {
             // jika file berhasil diupload, update data ke database
-            $query = "UPDATE buku SET nama='$nama', foto='$nama_file' WHERE id='$id'";
+            $query = "UPDATE buku SET nama='$nama', deskripsi='$deskripsi', foto='$nama_file' WHERE id='$id'";
         } else {
             echo "Gagal mengupload file.";
             exit;
